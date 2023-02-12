@@ -24,6 +24,20 @@ const todos = [
     }
 ]
 
+// challenge area
+// sort the array as per completed todos property. false should come first and true later
+const sortTodos = function(todos) {
+    return todos.sort(function(a, b) {
+        if(!a.completed && b.completed) {
+            return -1
+        } else if(!b.completed && a.completed) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+}
+
 let deleteTodo = function(todos, text) {
 
     let index = todos.findIndex( function (todo) {
@@ -41,6 +55,7 @@ const getThingsToDo = function (todos) {
     })
 }
 
+console.log(sortTodos(todos));
 console.log(getThingsToDo(todos))
 
 deleteTodo(todos, 'buy food')
