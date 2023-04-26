@@ -4,6 +4,10 @@
 
 function gradeCalc(score, totalScore) {
 
+    if(typeof score !== 'number' || typeof totalScore !== 'number') {
+        throw Error('Please provide numbers only')
+    }
+
     let percent = (score / totalScore) * 100
     let grade = ''
 
@@ -16,4 +20,8 @@ function gradeCalc(score, totalScore) {
     return `You got a ${grade} (${percent}%)`
 }
 
-console.log(gradeCalc(15, 20))
+try {
+    console.log(gradeCalc(15, 20))
+} catch (e) {
+    console.log(e.message)
+}

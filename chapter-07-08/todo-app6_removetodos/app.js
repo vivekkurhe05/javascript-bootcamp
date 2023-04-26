@@ -1,6 +1,4 @@
-// Delete dummy data
-// Read and parse the data when the app starts up
-// Stringify and write the data when new data is added
+'use strict'
 
 let todos = getSavedTodos()
 
