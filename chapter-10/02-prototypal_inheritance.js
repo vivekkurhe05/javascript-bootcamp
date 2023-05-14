@@ -5,10 +5,24 @@ const Person = function (firstName, lastName, age, likes = []) {
     this.likes = likes
 }
 
+// Person.prototype.getBio = function () {
+//     let bio = `${this.firstName} is ${this.age}.`
+
+//     let self = this
+//     this.likes.forEach(function (like) {
+//         bio += ` ${self.firstName} likes ${like}.`
+//     })
+
+//     return bio
+// }
+
+
+// or an alternative to above commented out funtion, use of arrow function
+
 Person.prototype.getBio = function () {
     let bio = `${this.firstName} is ${this.age}.`
 
-    this.likes.forEach((like) => {
+    this.likes.forEach( (like) => {
         bio += ` ${this.firstName} likes ${like}.`
     })
 
